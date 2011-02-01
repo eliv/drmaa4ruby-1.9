@@ -485,10 +485,8 @@ module DRMAA
             waited.delete! "\000"
             waited.strip!
 
- 
-            pp "timeout? :(" if r == errno_timeout
-       
             return nil if r == errno_timeout
+
             if r != errno_no_rusage
                 DRMAA.throw(r, r1[6])
                 return JobInfo.new(r1[1], r1[3], usage) 
