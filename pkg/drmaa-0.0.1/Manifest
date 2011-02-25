@@ -1,7 +1,0 @@
-Manifest
-README
-Rakefile
-example/example1.rb
-lib/drmaa.rb
-test/helper.rb
-test/test_drmaa.rb
