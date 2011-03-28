@@ -465,6 +465,8 @@ module DRMAA
             signal = " " * ErrSize
             r = FFI_DRMAA.drmaa_wtermsig(signal, ErrSize, stat, err, ErrSize)
             r1 = [signal, ErrSize, stat, err, ErrSize]
+            signal.delete! "\000"
+            signal.strip!
             DRMAA.throw(r, r1[3]) 
             return r1[0]
         end
